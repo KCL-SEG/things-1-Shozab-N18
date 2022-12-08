@@ -4,6 +4,6 @@ from models import Model
 
 # Create your models here
 class Things(Model.model):
-    name = models.CharField(max_length=10),
-    description = models.CharField(max_length=100),
-    quantity = models.IntegerField(),
+    name = models.CharField(max_length=30,unique=True),
+    description = models.CharField(max_length=120,unique=False),
+    quantity = models.IntegerField(unique=False,min=0,max=100),
