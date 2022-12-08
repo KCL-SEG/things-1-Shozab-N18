@@ -6,4 +6,8 @@ from django.db import models
 class Things(models.Model):
     name = models.CharField(max_length=30,unique=True),
     description = models.CharField(max_length=120,unique=False),
-    quantity = models.IntegerField(unique=False,min=0,max=100),
+    quantity = models.IntegerField(unique=False,
+        validators=[
+            min(1), 
+            max(100)
+            ]),
