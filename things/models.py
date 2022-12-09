@@ -8,6 +8,6 @@ class Thing(models.Model):
     quantity = models.PositiveIntegerField(
         unique=False,
         validators=[
-            MinValueValidator(1), 
+            MinValueValidator(0), 
             MaxValueValidator(100)
         ])
